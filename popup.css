@@ -1,0 +1,420 @@
+body {
+  padding: 0;
+  margin: 0;
+  
+}
+
+.container {
+    padding: 10px;
+    margin: auto;
+    width: 440px;
+}
+
+.spacer {
+  height: 20px;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  background-color: transparent;
+  border:none;
+  margin-bottom: 5px;
+ font-weight: 700;
+ font-size: 1.2em;
+ 
+  line-height: 1;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover, .accordion.active {
+ 
+  background-color: #e6e6e6;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+#tab1, #tab2 {
+  background-color:#e8faff;
+  border-width: 2px;
+  border-style: solid;
+  border-bottom: 0;
+}
+
+.tabs {
+  display: flex;
+  height: 39px
+}
+
+.tabs button {
+  background-color: #bababa;
+  padding: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #000000;
+  border-bottom: 0;
+  padding-bottom: 11px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+#button1 {
+  position: absolute;
+}
+
+#button2 {
+  position: absolute;
+  left: 140px;
+}
+
+.tabs button.active {
+  
+  background-color: #e8faff;
+  padding: 10px;
+  border-style: solid;
+  border-width: 2px;
+  z-index: 1;
+  border-color: #000000;
+  padding-bottom: 13px;
+  border-bottom: 0;
+ 
+}
+
+.tabs button:not(.active):hover{
+  background-color: #e8faff;
+}
+
+.row-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.messages {
+  opacity: 0;
+  height: 15px;
+  transition: opacity 0.5s;
+  padding-bottom: 5px;
+  color:#1a147d;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+
+.end {
+  background-color: #e8faff;
+  border-style: solid;
+  border-width: 2px;
+  border-top: 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.csvButtons, .custom_csvButtons{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-right: 10px;
+}
+
+.csvButtons button, .custom_csvButtons button {
+  
+  border-width: 2px;
+  border-style: solid;
+  border-color: #1a147d;
+  color: #1a147d;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+
+
+h1 {
+  font-family: 'Dongle', cursive;
+  font-size: 50px;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background: -webkit-linear-gradient(left, #1a147d, #00d4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:  1.5em;
+  font-weight: 500;
+}
+
+button, label {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+sup {
+  color: red;
+}
+
+
+p {
+    line-height: 1;
+   
+    font-size: 1em;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+
+.text-target {
+  color: #979999;
+  padding-left: 10px;
+}
+
+a {
+    display: block;
+    margin: auto;
+    color: #45b6fe;
+    font-size: 12px;
+}
+
+.intro {
+  margin-top: 0;
+  text-align: left;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    align-items: center;
+  }
+
+  .form-group label{
+    flex: none;
+    display: block;
+    width: 75px;
+  }
+
+  .form-input, .dropdown{
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: #a6c8ff;
+    border-radius: 3px;
+  }
+
+  .form-input {
+    width: 100px;
+    margin-right: 10px;
+  }
+  
+
+  .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .row-left {
+    
+    padding-left: 13px;
+  }
+
+  .row-block {
+    justify-content: space-around;
+    padding-bottom: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  } 
+
+ 
+
+
+ 
+  
+
+  /* Toggle Styling */
+
+  /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 32px; /* half of original value */
+    height: 18px; /* half of original value */
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #979999;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px; /* half of original value */
+    width: 14px; /* half of original value */
+    left: 2px; /* half of original value */
+    bottom: 2px; /* half of original value */
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+      -webkit-transform: translateX(14px);
+      -ms-transform: translateX(14px);
+      transform: translateX(14px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+      border-radius:18px ;
+  }
+  
+  .slider.round:before {
+      border-radius :50% ;
+  }
+
+
+  /* Buttons */
+  
+  
+  .button {
+    background: linear-gradient(to bottom right, #1a147d, #00d4ff);
+    border: 0;
+    border-radius: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 2.5;
+    
+    padding: 0 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+  }
+  
+  
+  .button:hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(25, 20, 125, 0.5), .125rem .125rem 1rem rgba(0, 213, 255, 0.5);
+  }
+
+  /* Add Event Parameters button styling */
+  #addEP, .csvButtons button, .custom_csvButtons button {
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 5px 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #1a147d;
+    color: #1a147d;
+    font-weight: bold;
+    transition: box-shadow .2s ease-in-out;
+  }
+
+  #addEP:hover, .csvButtons button:hover, .custom_csvButtons button:hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(25, 20, 125, 0.5), .125rem .125rem 1rem rgba(0, 213, 255, 0.5);
+  }
+
+ 
+
+
+
+
+  .minus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:25px;
+    width: 25px;
+    border-style: solid;
+    border-width: 1;
+    border-radius: 25px;
+    border-color: #888888;
+    color:#888888;
+    font-size: 2em;
+    background-color: transparent;
+  }
+
+  .minus span {
+    position: relative;
+    margin-bottom: 5px;
+  }
+
+  .minus:hover {
+    border-color: #c90101;
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), 0 0 1rem rgba(245, 66, 66, 0.5);
+    color: #c90101;
+    transition: box-shadow .2s ease-in-out;
+  }
+
+ 
+
+
+
+
+

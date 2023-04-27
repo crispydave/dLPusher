@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Dongle:wght@400;700&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="intro">
+        <h1>dLPusher</h1>
+
+  <button class="accordion">How to use dLPusher</button>
+  <div class="panel">
+  <p>Fill in your dataLayer push details below. Use the tabs to switch between ecommerce and custom events. Add extra item parameters with the additional items toggle.<br><br>You can download a CSV of all your ecommerce or custom pushes to date with the 'Download CSV' button or clear the pushes currently saved in the browser's memory using the 'clear CSV' button.<br><br>
+  dLPusher will only work on pages where a dataLayer object has been implemented.
+  </p>
+  </div>
+
+        
+      </div>
+      
+      <div class="tabs">
+        <button id="button1">Ecommerce Event</button>
+        <button id="button2">Custom Event</button>
+      </div>
+      <div id="tab1">
+      <div class="row row-block">
+        <div class="pushSelect block">
+          <p>Select ecommerce event type <sup>*</sup>
+          </p>
+          <form id="pushSelect" class="pushType">
+            <select name="selectChoices" class="dropdown">
+              <option id="purchase" value="purchase">Purchase</option>
+              <option id="view_item" value="view_item">View Item</option>
+              <option id="select_item" value="select_item">Select Item</option>
+              <option id="view_item_list" value="view_item_list">View Item List</option>
+              <option id="add_to_cart" value="add_to_cart">Add to Cart</option>
+              <option id="add_to_wishlist" value="add_to_wishlist">Add to Wishlist</option>
+              <option id="view_cart" value="view_cart">View Cart</option>
+              <option id="remove_from_cart" value="remove_from_cart">Remove from Cart</option>
+              <option id="begin_checkout" value="begin_checkout">Begin Checkout</option>
+              <option id="add_shipping_info" value="add_shipping_info">Add Shipping Info</option>
+              <option id="add_payment_info" value="add_payment_info">Add Payment Info</option>
+              <option id="refund" value="refund">Refund</option>
+              <option id="view_promotion" value="view_promotion">View Promotion</option>
+              <option id="select_promotion" value="select_promotion">Select Promotion</option>
+            </select>
+          </form>
+        </div>
+        <div class="block">
+          <p>Select currency <sup>*</sup>
+          </p>
+          <select id="currency" name="currency" class="dropdown">
+            <option value="EUR" id="EUR" selected>EUR</option>
+            <option value="USD" id="USD">USD</option>
+            <option value="GBP" id="GBP">GBP</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <label for="item_name">Item Name <sup>*</sup>
+          </label>
+          <input class="form-input" type="text" id="item_name" name="item_name" value="TRKKN hoodie">
+        </div>
+        <div class="form-group">
+          <label for="item_id">Item ID</label>
+          <input class="form-input" type="text" id="item_id" name="item_id" value="123456">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <label for="age">Item Price <sup>*</sup>
+          </label>
+          <input class="form-input" type="number" id="price" name="price" value="5" min="0" step="any">
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity <sup>*</sup>
+          </label>
+          <input class="form-input" type="number" id="quantity" name="quantity" value="1" min="1">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group optionalField purchase">
+          <label for="tax">Tax</label>
+          <input class="form-input" type="number" id="tax" name="tax" placeholder="0" min="0" step="any">
+        </div>
+        <div class="form-group optionalField purchase">
+          <label for="shipping">Shipping</label>
+          <input class="form-input" type="number" id="shipping" name="shipping" placeholder="0" min="0" step="any">
+        </div>
+      </div>
+      <div class="row-left">
+      <div id="paymentType" class="form-group optionalField payment_type">
+        <label for="payment_type">Payment Type</label>
+        <input class="form-input" type="text" id="payment_type" name="payment_type" value="Credit Card">
+      </div></div>
+      <div class="row-left">
+      <div id="shippingTier" class="form-group optionalField shipping_tier">
+        <label for="shipping_tier">Shipping Tier</label>
+        <input class="form-input" type="text" id="shipping_tier" name="shipping_tier" value="next-day">
+      </div></div>
+      <div class="row">
+        <div class="form-group optionalField promotion">
+          <label for="creative_name">Creative Name</label>
+          <input class="form-input" type="text" id="creative_name" name="creative_name">
+        </div>
+        <div class="form-group optionalField promotion">
+          <label for="creative_slot">Creative Slot</label>
+          <input class="form-input" type="text" id="creative_slot" name="creative_slot">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group optionalField promotion">
+          <label for="promotion_id">Promotion ID</label>
+          <input class="form-input" type="text" id="promotion_id" name="promotion_id">
+        </div>
+        <div class="form-group optionalField promotion">
+          <label for="promotion_name">Promotion Name</label>
+          <input class="form-input" type="text" id="promotion_name" name="promotion_name">
+        </div>
+      </div>
+      <!-- Rounded switch -->
+      <div class="row-left">
+        <div class="col">
+          <label class="switch">
+            <input id="advancedFields" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="col">
+          <p class="text-target">Additional item parameters</p>
+        </div>
+      </div>
+      <!-- Additional Fields -->
+      <div class="row">
+        <div class="form-group hidden">
+          <label for="coupon">Coupon</label>
+          <input class="form-input" type="text" id="coupon" name="coupon" value="TRKKN DISCOUNT">
+        </div>
+        <div class="form-group hidden">
+          <label for="discount">Discount</label>
+          <input class="form-input" type="number" id="discount" name="discount" min="0" step="any" value="0.99">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group hidden">
+          <label for="item_brand">Item Brand</label>
+          <input class="form-input" type="text" id="item_brand" name="item_brand" value="TRKKN">
+        </div>
+        <div class="form-group hidden">
+          <label for="item_category">Item Category</label>
+          <input class="form-input" type="text" id="item_category" name="item_category" value="clothing">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group hidden">
+          <label for="item_list_id">Item List ID</label>
+          <input class="form-input" type="text" id="item_list_id" name="item_list_id">
+        </div>
+        <div class="form-group hidden">
+          <label for="item_list_name">Item List Name</label>
+          <input class="form-input" type="text" id="item_list_name" name="item_list_name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group hidden">
+          <label for="item_variant">Item Variant</label>
+          <input class="form-input" type="text" id="item_variant" name="item_variant" value="black hoodie">
+        </div>
+        <div class="form-group hidden">
+          <label for="location_id">Location ID</label>
+          <input class="form-input" type="text" id="location_id" name="location_id">
+        </div>
+      </div>
+      
+    </div> <!-- End of Tab 1 -->
+
+    <div id="tab2">
+        <div class="spacer"></div>
+        <div class="row-left">
+            
+            <div class="form-group">
+              <label for="cEventName">Event Name<sup>*</sup>
+              </label>
+              <input class="form-input" type="text" id="cEventName" name="cEventName">
+            </div>  
+        </div>
+        <div class="row-left">
+        <h2>Event Parameters</h2>
+        </div>
+        <div id="dynamicForm">
+        
+        </div>
+        
+        
+            <div class="block">
+                <button type="button" id="addEP"><span class="plus"></span>Add Event Parameter</button>
+            </div>
+
+            
+       
+    </div>
+    
+
+
+      <div class="row-left end">
+        <div class="row-space-between">
+        <button type="button" id="button" class="button">Submit</button>
+        <div class="csvButtons">
+          <button id="csvDownload">Download CSV</button>
+          <button id="csvReset">Clear CSV</button>
+        </div>
+        <div class="custom_csvButtons">
+          <button id="custom_csvDownload">Download CSV</button>
+         <button id="custom_csvReset">Clear CSV</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="messages"><p>CSV cleared</p></div>
+      </div>
+      </div>
+      <script src="popup.js"></script>
+    </div>
+    <!-- container close-->
+  </body>
+</html>
+

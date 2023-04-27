@@ -1,0 +1,33 @@
+{
+    "name": "dLPusher",
+    "description": "Send dataLayer pushes to the browser for testing",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions": [
+        "storage",
+        "scripting",
+        "activeTab",
+        "tabs",
+        "downloads"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+
+    },
+    "action":{
+        "default_title": "dLPusher",
+        "default_popup": "popup.html"
+    },
+    
+    "web_accessible_resources": [
+        {
+          "resources": [ "injected-script.js" ],
+          "matches": [ "<all_urls>" ]
+        }
+    ]
+}
