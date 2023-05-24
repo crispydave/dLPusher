@@ -10,7 +10,7 @@ if (!document.getElementById('dlPushScript')) {
 if (typeof listenCheck === 'undefined') {
   // eslint-disable-next-line no-undef
   listenCheck = true
-  // eslint-disable-next-line no-undef
+  /// eslint-disable-next-line no-undef
   chrome.runtime.onMessage.addListener((msg) => {
     const event = new CustomEvent('cEventPush', { detail: msg })
     window.dispatchEvent(event)
