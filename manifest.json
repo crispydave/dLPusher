@@ -14,9 +14,9 @@
         "<all_urls>"
     ],
     "icons": {
-        "16": "icon16.png",
-        "48": "icon48.png",
-        "128": "icon128.png"
+        "16": "dlpusher_icon_16x16.png",
+        "48": "dlpusher_icon_48x48.png",
+        "128": "dlpusher_icon_128x128_alt.png"
 
     },
     "action":{

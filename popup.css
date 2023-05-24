@@ -1,13 +1,19 @@
 body {
-  padding: 0;
+  padding: 10px;
   margin: 0;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;
+  
   
 }
 
 .container {
     padding: 10px;
     margin: auto;
-    width: 440px;
+    width: 471px;
+    background: transparent linear-gradient(321deg, #50ADE6 0%, #536FEE 100%) 0% 0% no-repeat padding-box;
+    border-radius: 13px;
+    opacity: 1;
 }
 
 .spacer {
